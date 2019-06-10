@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div id="app">
+    <!--双向数据绑定 表单-->
+    <input type="text" v-model="message.a">
+    {{message.a}}
+    <ul>
+        <li></li>
+        {{message.a}}
+    </ul>
+</div>
+
+<script src="watcher.js"></script>
+<script src="observer.js"></script>
+<script src="compile.js"></script>
+<script src="MVVM.js"></script>
+
+
+<script>
+    // 数据一般挂载到vm上
+    // Object.defineProperty    get和set方法
+    // vue中实现双向绑定 1.模板的编译 2.数据劫持(观察数据变化) 3.Watcher(发现数据变化，模板重新编译)
+    let vm = new MVVM({
+        el: '#app',
+        data: {
+            message: {
+                a: 'hello World'
+            },
+            a: 1
+        }
+    })
+</script>
+</body>
+</html>
