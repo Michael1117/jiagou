@@ -326,3 +326,57 @@ eval("console.log(\"欢迎来到webpack4\");\n\n//# sourceURL=webpack:///./src/i
 > 运行zfpk
 
 ![1560220655797](C:\Users\michaelhee\AppData\Roaming\Typora\typora-user-images\1560220655797.png)
+
+```
+nvm install v8.0.0 64
+nvm list
+nvm use 8
+```
+
+```javascript
+(function (modules) {   // 不带注释
+    function require(moduleId) {
+        var module = {
+            exports: {}
+        };
+        modules[moduleId].call(module.exports, module, module.exports, require);
+        return module.exports;
+    }
+    return require("./src/index.js");
+})
+({
+    "./src/a.js":
+        (function (module, exports) {
+            eval("module.exports = '欢迎来到webpack4';\n\n//# sourceURL=webpack:///./src/a.js?");
+        }),
+    "./src/index.js":
+        (function (module, exports, require) {
+            eval("let result =require(/*! ./a.js */ \"./src/a.js\");\r\nconsole.log(result);\r\nconsole.log(\"欢迎来到webpack4~~~~\");\n\n//# sourceURL=webpack:///./src/index.js?");
+        })
+});
+```
+
+```javascript
+(function (modules) {   // 带注释的
+    function require(moduleId) {
+        var module = {
+            exports: {}
+        };
+        modules[moduleId].call(module.exports, module, module.exports, require);
+        return module.exports;
+    }
+    return require("./src/index.js");
+})
+({
+
+    "./src/a.js":
+        (function (module, exports) {
+            eval("module.exports = '欢迎来到webpack4';\n\n//# sourceURL=webpack:///./src/a.js?");
+        }),
+    "./src/index.js":
+        (function (module, exports, require) {
+            eval("let result = require(/*! ./a.js */ \"./src/a.js\");\r\nconsole.log(result);\r\n//console.log(\"欢迎来到webpack4~~~~\");\n\n//# sourceURL=webpack:///./src/index.js?");
+        })
+});
+```
+

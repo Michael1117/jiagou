@@ -1,10 +1,10 @@
 {
-  "name": "zfpk",
+  "name": "zfpack",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "bin": {
-    "zfpk": "bin/zfpack.js"
+    "zfpack": "bin/zfpack.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

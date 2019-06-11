@@ -1,4 +1,4 @@
-(function (modules) {
+(function (modules) {   // 不带注释
     function require(moduleId) {
         var module = {
             exports: {}
@@ -15,6 +15,6 @@
         }),
     "./src/index.js":
         (function (module, exports, require) {
-            eval("let result =require(/*! ./a.js */ \"./src/a.js\");\r\nconsole.log(result);\n\n//# sourceURL=webpack:///./src/index.js?");
+            eval("let result =require(/*! ./a.js */ \"./src/a.js\");\r\nconsole.log(result);\r\nconsole.log(\"欢迎来到webpack4~~~~\");\n\n//# sourceURL=webpack:///./src/index.js?");
         })
 });

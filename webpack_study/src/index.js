@@ -1,1 +1,2 @@
-console.log("欢迎来到webpack4");
+let result = require('./a.js');
+console.log(result);
