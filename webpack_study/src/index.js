@@ -1,3 +1,1 @@
-let str = require('./a.js');
-console.log(str);
-console.log('Hello World');
+console.log("欢迎来到webpack4");
