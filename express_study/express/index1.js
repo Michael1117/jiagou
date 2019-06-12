@@ -1,8 +1,3 @@
-## 测试post请求
-
-![1560267660941](C:\Users\michaelhee\AppData\Roaming\Typora\typora-user-images\1560267660941.png)
-
-```javascript
 let http = require('http');
 let url = require('url');
 
@@ -52,11 +47,3 @@ function createApplication() {
 }
 
 module.exports = createApplication;
-```
-
-> 加入中间件之后的写法
-
-```javascript
-
-```
-
