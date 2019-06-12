@@ -60,3 +60,5 @@ module.exports = createApplication;
 
 ```
 
+curl -X POST http://localhost:8082/world 测试POST请求
+
